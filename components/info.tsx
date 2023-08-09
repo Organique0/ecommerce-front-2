@@ -12,9 +12,9 @@ const Info: React.FC<InfoProps> = ({ data }) => {
         <div>
             <h1 className="text-3xl font-bold text-gray-900">{data.name}</h1>
             <div className="flex items-center mt-3 justify-between">
-                <p className="text-2xl text-gray-900">
+                <div className="text-2xl text-gray-900">
                     <Currency value={data?.price} />
-                </p>
+                </div>
             </div>
             <hr className="my-4" />
             <div className="flex flex-col gap-y-6">

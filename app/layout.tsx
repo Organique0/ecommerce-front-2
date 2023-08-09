@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { Urbanist } from 'next/font/google'
 import Navbar from '@/components/navbar'
 import { cn } from '@/lib/utils'
+import ModalProvider from '@/providers/modalProvider'
 
 const font = Urbanist({ subsets: ['latin'] })
 
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(font.className, "bg-slate-400")}>
+        <ModalProvider />
         <Navbar />
         {children}
         <Footer />

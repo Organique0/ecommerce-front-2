@@ -8,6 +8,7 @@ interface CartStore {
     addItem: (data:Product) => void;
     removeItem: (id:string) => void;
     reduceItem:(data:Product)=> void;
+    getTotalPrice:()=>number;
     getTotalProducts:()=>number;
     removeAll: ()=>void;
 }
@@ -45,7 +46,7 @@ const UseCart = create(
                 }
 
             } else {
-                set({ items: [...currentItems, { ...data, quantity: 1 }] });
+                set({ items: [...currentItems] });
             }
 
             toast.success("Item quantity changed!");
@@ -55,12 +56,19 @@ const UseCart = create(
             set({items:[...get().items.filter((item) => item.id !== id)]});
             toast.success("Item removed from cart");
         },
+
         removeAll: ()=>set({items:[]}),
 
         getTotalProducts: () => {
             const totalProducts = get().items.reduce((total, item) => total + item.quantity, 0);
             return totalProducts;
         },
+        getTotalPrice: () => {
+            const total = get().items.reduce((total,item) => {
+                return total + Number(item.price);                
+            },0);
+            return total;
+        }
     }), {
         name:"cartStorage",
         storage:createJSONStorage(()=>localStorage)

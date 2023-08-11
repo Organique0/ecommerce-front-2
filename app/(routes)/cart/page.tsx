@@ -4,7 +4,7 @@ import Container from "@/components/ui/container";
 import UseCart from "@/hooks/useCart";
 import { useEffect, useState } from "react";
 import CartItem from "./components/CartItem";
-import { Product } from "@/types";
+import Summary from "./components/Summary";
 
 
 const CartPage = () => {
@@ -31,7 +31,7 @@ const CartPage = () => {
                                 ))}
                             </ul>
                         </div>
-
+                        <Summary />
                     </div>
                 </div>
             </Container>

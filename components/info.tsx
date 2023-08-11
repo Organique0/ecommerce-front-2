@@ -1,13 +1,16 @@
+"use client";
 import { Product } from "@/types";
 import Currency from "./ui/Currency";
 import Button from "./ui/button";
 import { FiShoppingCart } from "react-icons/fi";
+import UseCart from "@/hooks/useCart";
 
 interface InfoProps {
     data: Product;
 }
 
 const Info: React.FC<InfoProps> = ({ data }) => {
+    const cart = UseCart();
     return (
         <div>
             <h1 className="text-3xl font-bold text-gray-900">{data.name}</h1>
@@ -28,7 +31,7 @@ const Info: React.FC<InfoProps> = ({ data }) => {
                 </div>
             </div>
             <div className="mt-10 flex items-center gap-x-3">
-                <Button className="flex items-center gap-x-2" >
+                <Button className="flex items-center gap-x-2" onClick={() => cart.addItem(data)}>
                     Add to cart
                     <FiShoppingCart />
                 </Button>

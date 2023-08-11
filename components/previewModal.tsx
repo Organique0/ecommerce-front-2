@@ -6,6 +6,7 @@ import Gallery from "./gallery";
 import Info from "./info";
 
 const PreviewModal = () => {
+
     const previewModal = usePreviewModal();
     const product = usePreviewModal((state) => state.data);
     if (!product) return null;

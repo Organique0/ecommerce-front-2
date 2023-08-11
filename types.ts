@@ -19,6 +19,7 @@ export interface Product {
     size:Size;
     images:Image[]
     color:Color;
+    quantity:number;
 }
 
 export interface Image{

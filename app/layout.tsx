@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(font.className, "bg-slate-400")}>
+      <body className={cn(font.className)}>
         <ModalProvider />
         <ToastProvider />
         <Navbar />

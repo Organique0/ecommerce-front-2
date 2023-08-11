@@ -18,7 +18,7 @@ const CartPage = () => {
 
 
     return (
-        <div className="bg-inherit">
+        <div className="bg-white">
             <Container>
                 <div className="px-4 py-16 sm:px-6 lg:px-8">
                     <h1 className="text-3xl font-bold text-black">shopping cart</h1>

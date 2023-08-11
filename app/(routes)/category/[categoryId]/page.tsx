@@ -32,7 +32,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({ params, searchParams 
     const category = await getCategory(params.categoryId);
 
     return (
-        <div className="bg-inherit">
+        <div className="bg-white">
             <Container>
                 <Billboard data={category.billboard} />
                 <div className="px-4 sm:px-6 lg:px-8 pb-24">

@@ -4,7 +4,7 @@ import Billboard from "@/components/billboard";
 import ProductList from "@/components/productList";
 import Container from "@/components/ui/container";
 
-export const relavidate = 0;
+//export const relavidate = 0;
 
 const HomePage = async () => {
     const billboard = await getBillboard("8ee8861f-3a59-4110-ac24-6187315e7233");

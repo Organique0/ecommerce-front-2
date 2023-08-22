@@ -35,17 +35,17 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
                     <div className="mt-1">
                         <Currency value={data.price} />
                         <div className="pt-2">
-                            <p className="flex gap-4 items-center">Quantity:
+                            <div className="flex gap-4 items-center">Quantity:
                                 <span className="font-semibold flex gap-2 pt-1 items-center">
                                     <IconButton className="bg-gray-300" onClick={() => cart.reduceItem(data)} icon={<Minus size={12} />} />
                                     {data.quantity}
                                     <IconButton className="bg-gray-300" onClick={() => cart.addItem(data)} icon={<Plus size={12} />} />
                                 </span>
-                            </p>
-                            <p className="flex pt-2">
+                            </div>
+                            <div className="flex pt-2">
                                 <span className="pr-1">Total:</span>
                                 <Currency value={data.quantity * parseFloat(data.price)} />
-                            </p>
+                            </div>
                         </div>
                     </div>
 
